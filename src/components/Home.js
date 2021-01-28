@@ -91,20 +91,22 @@ const Home = () => {
                 </div>
 
                 <div className="d-flex w-100 justify-content-center">
-                    <Pagination
-                        activePage={activePage}
-                        itemsCountPerPage={10}
-                        totalItemsCount={total}
-                        pageRangeDisplayed={5}
-                        onChange={handlePageChange}
-                        innerClass="pagination pagination-circle pg-red"
-                        itemClass="page-item"
-                        linkClass="page-link waves-effect waves-effect"
-                        prevPageText="&laquo;"
-                        nextPageText="&raquo;"
-                        firstPageText="First"
-                        lastPageText="Last"
-                    />
+                    { recipes && recipes.length > 0 ? (
+                        <Pagination
+                            activePage={activePage}
+                            itemsCountPerPage={10}
+                            totalItemsCount={total}
+                            pageRangeDisplayed={5}
+                            onChange={handlePageChange}
+                            innerClass="pagination pagination-circle pg-red"
+                            itemClass="page-item"
+                            linkClass="page-link waves-effect waves-effect"
+                            prevPageText="&laquo;"
+                            nextPageText="&raquo;"
+                            firstPageText="First"
+                            lastPageText="Last"
+                        />
+                    ) : ''}
                 </div>
                 
             </Container>
